@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namn</title>
+    <style>
+        div
+        {
+            background-color:orange ;
+        }
+
+        fieldset
+        {
+            background-color: greenyellow;            
+        }
+
+    </style>
+</head>
+<body style="margin: 10% 35%; background-color:cadetblue; text-align: center;" >
+   <fieldset>
+   <fieldset>
+       <legend><b>Analysera ett namn</b></legend>
+    <form>
+         <br><br>
+        <input type="text" id="namn">
+        <br><br>
+        <button type="button" onclick="visa()" >Analysera!</button>
+    </form>
+</fieldset>
+<div>
+<p id="textArea" ></p>
+</div>
+</fieldset>
+<script>
+    function visa()
+{
+
+//Hämtar namnet från textboxen:
+var namn = document.getElementById("namn").value;
+
+//Tar första bokstavet
+var forstB = namn.slice(0,1);
+// Kan också görs med:
+// let forstB = namn.charAt(0);
+
+//Konverterar namnet till stora bokstäver:
+var storaB = namn.toUpperCase();
+
+//Tar bort eventuella mellanslag och räknar antal bokstäver:
+let ejMellan = namn.replace(/ /g,"");
+var antalB = ejMellan.length;
+
+document.getElementById("textArea").innerHTML = "<br>Namnet har " + antalB + " bokstäver.<br>" + "Första bokstaven i namanet är: " + forstB + ".<br>Namnet med enbart stora bokstäver blir: " + storaB + ".<br><br>";
+
+}
+
+</script>
+
+
+</body>
+</html>
